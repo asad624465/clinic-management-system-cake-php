@@ -51,16 +51,15 @@
                                 <div class="col-sm-12">
                                     <table class="table table-striped table-bordered no-footer" style="width: 100%;">
                                         <tr>
-                                            <th scope="col"><?= __('Id') ?></th>
-                                            <th scope="col"><?= __('Patient Name') ?></th>
-                                            <th scope="col"><?= __('Phone') ?></th>
-                                            <th scope="col"><?= __('Age') ?></th>
-                                            <th scope="col"><?= __('Address') ?></th>
-                                            <th scope="col"><?= __('City') ?></th>
-                                            <th scope="col"><?= __('Zip Code') ?></th>
-                                            <th scope="col"><?= __('Doctor Id') ?></th>
-                                            <th scope="col"><?= __('Active') ?></th>
-                                            <th scope="col" class="actions"><?= __('Actions') ?></th>
+                                            <th scope="col" style="width:5%"><?= __('Id') ?></th>
+                                            <th scope="col" style="width:10%"><?= __('Patient Name') ?></th>
+                                            <th scope="col" style="width:10%"><?= __('Phone') ?></th>
+                                            <th scope="col" style="width:10%"><?= __('Age') ?></th>
+                                            <th scope="col" style="width:15%"><?= __('Address') ?></th>
+                                            <th scope="col" style="width:10%"><?= __('City') ?></th>
+                                            <th scope="col" style="width:5%"><?= __('Zip Code') ?></th>
+                                            <th scope="col" style="width:10%"><?= __('Active') ?></th>
+                                            <th scope="col" style="width:25%" class="actions"><?= __('Actions') ?></th>
                                         </tr>
                                          <tbody>
                                             <?php foreach ($carrier->patients as $patients): ?>
@@ -72,12 +71,11 @@
                                                 <td><?= h($patients->address) ?></td>
                                                 <td><?= h($patients->city) ?></td>
                                                 <td><?= h($patients->zip_code) ?></td>
-                                                <td><?= h($patients->Doctors->first_name) ?></td>
                                                 <td><?= ($patients->active=="1")?'<span class="badge badge-success">Active</span>':'<span class="badge badge-primary">Inactive</span>'; ?></td>
                                                 <td class="actions">
-                                                    <?= $this->Html->link(__('View'), ['controller' => 'Patients', 'action' => 'view', $patients->id]) ?>
-                                                    <?= $this->Html->link(__('Edit'), ['controller' => 'Patients', 'action' => 'edit', $patients->id]) ?>
-                                                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Patients', 'action' => 'delete', $patients->id], ['confirm' => __('Are you sure you want to delete # {0}?', $patients->id)]) ?>
+                                                    <?= $this->Html->link(__('View'), ['controller' => 'Patients', 'action' => 'view', $patients->id],['class'=>'btn btn-info btn-sm']) ?>
+                                                    <?= $this->Html->link(__('Edit'), ['controller' => 'Patients', 'action' => 'edit', $patients->id],['class'=>'btn btn-primary btn-sm']) ?>
+                                                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Patients', 'action' => 'delete', $patients->id], ['class'=>'btn btn-danger btn-sm','confirm' => __('Are you sure you want to delete # {0}?', $patients->id)]) ?>
                                                 </td>
                                             </tr>
                                             <?php endforeach; ?>

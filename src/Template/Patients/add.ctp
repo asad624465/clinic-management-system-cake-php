@@ -22,7 +22,7 @@
             echo $this->Form->control('city');
             echo $this->Form->control('zip_code');
             echo $this->Form->control('doctor_id');
-            echo $this->Form->control('carrier_id');
+            echo $this->Form->control('carrier_id',['options' => $carriers]);
             echo $this->Form->control('active');
         ?>
     </fieldset>

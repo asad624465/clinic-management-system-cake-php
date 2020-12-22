@@ -9,7 +9,7 @@
         <div class="x_title">
             <h2>Doctor List</h2>
             <ul class="nav navbar-right panel_toolbox">
-                <a href="<?php echo $this->Url->build(['action'=>'add']);?>" class="btn btn-primary">Add new Patient</a>
+                <a href="<?php echo $this->Url->build(['action'=>'add']);?>" class="btn btn-primary btn-sm">Add new Patient</a>
             </ul>
             <div class="clearfix"></div>
         </div>
