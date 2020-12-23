@@ -35,7 +35,7 @@ class CarriersTable extends Table
         parent::initialize($config);
 
         $this->setTable('carriers');
-        $this->setDisplayField('id');
+        $this->setDisplayField('carriers_name');
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');

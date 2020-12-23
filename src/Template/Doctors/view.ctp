@@ -34,18 +34,6 @@
                                             <td><?= h($doctor->address) ?></td>
                                         </tr>
                                         <tr>
-                                            <th scope="row"><?= __('Id') ?></th>
-                                            <td><?= $this->Number->format($doctor->id) ?></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row"><?= __('Created') ?></th>
-                                            <td><?= h($doctor->created) ?></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row"><?= __('Modified') ?></th>
-                                            <td><?= h($doctor->modified) ?></td>
-                                        </tr>
-                                        <tr>
                                             <th scope="row"><?= __('Active') ?></th>
                                             <td><?= $doctor->active ? __('Yes') : __('No'); ?></td>
                                         </tr>
@@ -82,7 +70,6 @@
                                             <th scope="col"><?= __('Address') ?></th>
                                             <th scope="col"><?= __('City') ?></th>
                                             <th scope="col"><?= __('Zip Code') ?></th>
-                                            <th scope="col"><?= __('Doctor Id') ?></th>
                                             <th scope="col"><?= __('Carrier Id') ?></th>
                                             <th scope="col"><?= __('Active') ?></th>
                                            
@@ -98,13 +85,12 @@
                                                     <td><?= h($patients->address) ?></td>
                                                     <td><?= h($patients->city) ?></td>
                                                     <td><?= h($patients->zip_code) ?></td>
-                                                    <td><?= h($patients->doctor_id) ?></td>
                                                     <td><?= h($patients->carrier_id) ?></td>
-                                                    <td><?= h($patients->active) ?></td>
+                                                    <td><?= $patients->active ? __('Yes') : __('No'); ?></td>
                                                     <td class="actions">
-                                                        <?= $this->Html->link(__('View'), ['controller' => 'Patients', 'action' => 'view', $patients->id]) ?>
-                                                        <?= $this->Html->link(__('Edit'), ['controller' => 'Patients', 'action' => 'edit', $patients->id]) ?>
-                                                        <?= $this->Form->postLink(__('Delete'), ['controller' => 'Patients', 'action' => 'delete', $patients->id], ['confirm' => __('Are you sure you want to delete # {0}?', $patients->id)]) ?>
+                                                        <?= $this->Html->link(__('View'), ['controller' => 'Patients', 'action' => 'view', $patients->id],['class'=>'btn btn-info btn-sm']) ?>
+                                                        <?= $this->Html->link(__('Edit'), ['controller' => 'Patients', 'action' => 'edit', $patients->id],['class'=>'btn btn-primary btn-sm']) ?>
+                                                        <?= $this->Form->postLink(__('Delete'), ['controller' => 'Patients', 'action' => 'delete', $patients->id], ['class'=>'btn btn-danger btn-sm','confirm' => __('Are you sure you want to delete # {0}?', $patients->id)]) ?>
                                                     </td>
                                                 </tr>
                                                 <?php endforeach; ?>

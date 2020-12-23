@@ -36,7 +36,6 @@ class DoctorsController extends AppController
         $doctor = $this->Doctors->get($id, [
             'contain' => ['Patients'],
         ]);
-
         $this->set('doctor', $doctor);
     }
 

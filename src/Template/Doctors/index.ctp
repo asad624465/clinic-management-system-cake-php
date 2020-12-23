@@ -23,22 +23,20 @@
                                     <table class="table table-striped table-bordered no-footer" style="width: 100%;">
                                         <thead>
                                             <tr>
-                                                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                                                <th scope="col"><?= $this->Paginator->sort('first_name') ?></th>
-                                                <th scope="col"><?= $this->Paginator->sort('last_name') ?></th>
-                                                <th scope="col"><?= $this->Paginator->sort('email') ?></th>
-                                                <th scope="col"><?= $this->Paginator->sort('phone') ?></th>
-                                                <th scope="col"><?= $this->Paginator->sort('address') ?></th>
-                                                <th scope="col"><?= $this->Paginator->sort('active') ?></th>
-                                                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                                                <th scope="col" style="width:5%"><?= $this->Paginator->sort('id') ?></th>
+                                                <th scope="col" style="width:15%"><?= $this->Paginator->sort('name') ?></th>
+                                                <th scope="col" style="width:20%"><?= $this->Paginator->sort('email') ?></th>
+                                                <th scope="col" style="width:10%"><?= $this->Paginator->sort('phone') ?></th>
+                                                <th scope="col" style="width:20%"><?= $this->Paginator->sort('address') ?></th>
+                                                <th scope="col" style="width:10%"><?= $this->Paginator->sort('active') ?></th>
+                                                <th scope="col" style="width:20%" class="actions"><?= __('Actions') ?></th>
                                             </tr>
                                         </thead>
                                         <tbody>  
                                             <?php foreach ($doctors as $doctor): ?>
                                             <tr>
                                                 <td><?= $this->Number->format($doctor->id) ?></td>
-                                                <td><?= h($doctor->first_name) ?></td>
-                                                <td><?= h($doctor->last_name) ?></td>
+                                                <td><?= h($doctor->first_name.' '.$doctor->last_name) ?></td>
                                                 <td><?= h($doctor->email) ?></td>
                                                 <td><?= h($doctor->phone) ?></td>
                                                 <td><?= h($doctor->address) ?></td>
@@ -46,7 +44,7 @@
                                                 <td class="actions">
                                                     <a href="<?php echo $this->Url->build(['action' => 'view', $doctor->id]);?>" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
                                                     <a href="<?php echo $this->Url->build(['action' => 'edit', $doctor->id]);?>" class="btn btn-info btn-sm"><i class="fa fa-pencil-square-o"></i></a>
-                                                    <?= $this->Form->postLink(__('Del'), ['action' => 'delete', $doctor->id], ['confirm' => __('Are you sure you want to delete # {0}?', $doctor->id)],['class'=>'btn btn-danger btn-sm']) ?>
+                                                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $doctor->id], ['class'=>'btn btn-danger btn-sm','confirm' => __('Are you sure you want to delete # {0}?', $doctor->id)]) ?>
                                                             </td>
                                             </tr>
                                             <?php endforeach; ?>

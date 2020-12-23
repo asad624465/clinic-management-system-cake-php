@@ -35,7 +35,7 @@ class DoctorsTable extends Table
         parent::initialize($config);
 
         $this->setTable('doctors');
-        $this->setDisplayField('id');
+        $this->setDisplayField('first_name');
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
